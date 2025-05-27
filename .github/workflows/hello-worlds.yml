@@ -19,3 +19,15 @@ jobs:
                     name: ${{ inputs.name }}
             - name: Output time
               run: echo "The time we greeted the user is ${{ steps.hello.outputs.time }}"
+
+    goodbye-world:
+        runs-on: ubuntu-latest
+        name: A simple action that says goodbye
+        steps:
+            - name: Say goodbye
+              uses: fboitel/actions/javascript/goodbye-world@v1.1
+              id: goodbye
+              with:
+                    name: ${{ inputs.name }}
+            - name: Output time
+              run: echo "The time we said goodbye to the user is ${{ steps.goodbye.outputs.time }}"
