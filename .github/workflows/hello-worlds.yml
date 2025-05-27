@@ -1,0 +1,20 @@
+on:
+    workflow_dispatch:
+        inputs:
+            name:
+                description: 'Name to greet'
+                required: true
+                default: 'World'
+
+jobs:
+    hello-world:
+        runs-on: ubuntu-latest
+        name: A simple action that says hello
+        steps:
+            - name: Say hello
+              uses: actions/containers/hello-world@v1
+              id: hello
+              with:
+                    name: ${{ inputs.name }}
+            - name: Output time
+              run: echo "The time we greeted the user is ${{ steps.hello.outputs.time }}"
