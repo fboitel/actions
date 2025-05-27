@@ -1,0 +1,15 @@
+name: 'Hello World'
+description: 'A simple action that prints "Hello World"'
+inputs:
+  name:
+    description: 'Name to greet'
+    required: false
+    default: 'World'
+outputs:
+  time:
+    description: 'The time we greeted the user'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args: 
+    - ${{ inputs.name }}
