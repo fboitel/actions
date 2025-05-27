@@ -1,0 +1,13 @@
+name: 'Goodbye World'
+description: 'A simple action that says goodbye'
+inputs:
+  name:
+    description: 'Name to say goodbye to'
+    required: false
+    default: 'World'
+outputs:
+  time:
+    description: 'The time we said goodbye to the user'
+runs:
+  using: 'node20'
+  main: 'index.js'
